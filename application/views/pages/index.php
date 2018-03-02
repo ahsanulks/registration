@@ -96,7 +96,7 @@
 				<div class="service-item">
 					<i class="icon-check"></i>
 					<h3 class="service">PENDAFTARAN KOPERASI</h3>
-					<p class="clear">Anggota Koperasi Budi Setia adalah Karyawan Tetap di PT Pegadaian (Persero). Untuk melakukan pendaftaran, silakan klik <a href="#">DISINI</a></p>
+					<p class="clear">Anggota Koperasi Budi Setia adalah Karyawan Tetap di PT Pegadaian (Persero). Untuk melakukan pendaftaran, silakan klik <a href="<?=base_url()?>registration">DISINI</a></p>
 				</div>
 			</div><!--end one-third-->						
 
