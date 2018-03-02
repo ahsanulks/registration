@@ -4,7 +4,7 @@
 		<ul>
 			<!-- THE FIRST SLIDE -->
 			<li data-transition="slidedown" data-slotamount="15" data-masterspeed="300">
-				<img src="images/slides/slide5.jpg" alt="" />
+				<img src="<?=base_url()?>assets/images/slides/slide5.jpg" alt="" />
 								
 				<div class="caption box-slide1 lfl ltl"  
 					 data-x="0" 
@@ -17,7 +17,7 @@
 			<!-- THE SECOND SLIDE -->
 			<li data-transition="fade" data-slotamount="15" data-masterspeed="300">
 				<!-- THE MAIN IMAGE IN THE SLIDE -->
-				<img src="images/slides/slide3.jpg" alt="" />
+				<img src="<?=base_url()?>assets/images/slides/slide3.jpg" alt="" />
 														
 				<!-- THE CAPTIONS IN THIS SLDIE -->
 				<div class="caption box-slide2 lft ltt"  
@@ -30,12 +30,12 @@
 			
 			<!-- THE THIRD SLIDE -->
 			<li data-transition="papercut" data-slotamount="15" data-masterspeed="300" data-link="portfolio-single.html">
-				<img src="images/slides/slide2.jpg" alt="" />
+				<img src="<?=base_url()?>assets/images/slides/slide2.jpg" alt="" />
 			</li>
 
 			<!-- THE FOURTH SLIDE -->
 			<li data-transition="slideright" data-slotamount="15" data-masterspeed="300">
-				<img src="images/slides/slide1.jpg" alt="" />
+				<img src="<?=base_url()?>assets/images/slides/slide1.jpg" alt="" />
 								
 				<div class="caption title_text lfl stl"  
 					 data-x="0" 
@@ -53,21 +53,21 @@
 			</li>	
 			<!-- THE FIFTH SLIDE -->
 			<li data-transition="fade" data-slotamount="15" data-masterspeed="300">
-				<img src="images/slides/slide6.jpg" alt="" />
+				<img src="<?=base_url()?>assets/images/slides/slide6.jpg" alt="" />
 								
 				<div class="caption lfl fadeout"  
 					 data-x="90" 
 					 data-y="120" 
 					 data-speed="300" 
 					 data-start="500" 
-					 data-easing="easeOutExpo"><img src="images/slides/layer1.png" alt=""></div>
+					 data-easing="easeOutExpo"><img src="<?=base_url()?>assets/images/slides/layer1.png" alt=""></div>
 								
 				<div class="caption lfl fadeout"  
 					 data-x="65" 
 					 data-y="140" 
 					 data-speed="300" 
 					 data-start="800" 
-					 data-easing="easeOutExpo"><img src="images/slides/layer2.png" alt=""></div>				 
+					 data-easing="easeOutExpo"><img src="<?=base_url()?>assets/images/slides/layer2.png" alt=""></div>				 
 			</li>					
 		</ul>
 		<!--enable slider timer 
