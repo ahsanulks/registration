@@ -241,7 +241,6 @@ input.title {
 
 textarea {
     height:130px;
-    padding:2% 2%;
     width:95.5%;
 }
 
@@ -3645,4 +3644,44 @@ ul.customlist li i {
 .over {
 	background: #f7f7f7;
 	color:#444;
+}
+
+.full-width{
+	width: 100%;
+}
+
+#registerform label {
+	clear:both;
+}	
+
+#registerform input[type=text] {
+	margin-bottom:10px;
+	width:100%;
+	padding:1% 1%;
+	height:20px;
+	line-height:20px;
+	background:#f7f7f7;
+
+}
+
+.button-submit {
+	font-size:12px;
+	clear:both;
+	cursor:pointer;
+	margin:0;
+}
+
+#registerform input:focus, #registerform textarea:focus {
+	outline:none;
+}
+
+#registerform input[type=submit]:hover {
+	
+}
+
+#registerform textarea { 
+	height:130px;
+	clear:both;
+	padding: 1% 1%;
+	background:#f7f7f7;
 }

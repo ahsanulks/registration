@@ -69,7 +69,7 @@
 	<header id="header">
 		<div class="centered-wrapper">
 			<div class="one-third">
-				<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+				<div class="logo"><a href="<?=base_url()?>"><img src="<?=base_url()?>assets/images/logo.png" alt="" /></a></div>
 			</div><!--end one-third-->
 			
 			<div class="two-third column-last">		
@@ -85,7 +85,7 @@
 							</ul>							
 						</li>
 						<li><a href="tentang-kami.html"><span>TENTANG KAMI</span></a></li>
-						<li><a href="#"><span>REGISTRASI</span></a></li>				
+						<li><a href="<?=base_url()?>registration"><span>REGISTRASI</span></a></li>				
 						<li><a href="contact.html"><span>KONTAK</span></a></li>
 					</ul>
 				</nav><!--end navigation-->
