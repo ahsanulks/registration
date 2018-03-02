@@ -35,7 +35,7 @@
 					<label>Nama Lengkap <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="name" name="name" type="text" required>
+					<input id="name" name="nama" type="text" required>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Tempat Lahir <span>*</span></label>
@@ -77,7 +77,8 @@
 				<fieldset class="percent-four-fifth column-last">
 					<button type="submit" class="button-submit button red">Kirim</button>
 				</fieldset>
-			</form>		
+			</form>
+			<?=validation_errors()?>		
 		</div><!--end contactform-->
 	</div>
 </div>
