@@ -104,7 +104,7 @@
 				<div class="service-item">
 					<i class="icon-envelope-alt"></i>
 					<h3 class="service">PENGAJUAN PINJAMAN</h3>
-					<p class="clear">Pengajuan pinjaman dapat dilakukan secara online melalui <a href="#">FORM PENGAJUAN</a></p>
+					<p class="clear">Pengajuan pinjaman dapat dilakukan secara online melalui <a href="<?=base_url('permohonan-pinjaman')?>">FORM PENGAJUAN</a></p>
 				</div>
 			</div><!--end one-third-->
 
