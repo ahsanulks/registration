@@ -75,7 +75,7 @@
 			<div class="two-third column-last">		
 				<nav id="navigation">
 					<ul id="mainnav">
-						<li><a href="index.html"><span>BERANDA</span></a>
+						<li><a href="<?=base_url()?>"><span>BERANDA</span></a>
 							<ul>
 								<li><a class="current" href="index.html">Home Version 1</a></li>
 								<li><a href="index-2.html">Home Version 2</a></li>

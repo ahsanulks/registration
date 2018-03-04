@@ -20,8 +20,7 @@
 </section> <!-- end section title-content-->
 
 <div class="centered-wrapper">
-	<div class="percent-one-third">text goes here</div>
-	<div class="percent-two-third column-last">
+	<div class="percent-two-third">
 		<h6>Permohonan Anggota</h6>
 		<div id="registerform">
 			<form method="post" action="<?=base_url()?>register/register_action" name="registerform" id="registerform">
@@ -35,7 +34,7 @@
 					<label>Nama Lengkap <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="name" name="nama" type="text" required>
+					<input id="nama" name="nama" type="text" required>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Tempat Lahir <span>*</span></label>
@@ -53,7 +52,7 @@
 					<label>Grade <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="grade" name="grade" type="text" required>
+					<input id="golongan" name="golongan" type="text" required>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Jabatan <span>*</span></label>
@@ -75,12 +74,35 @@
 				</fieldset>
 				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<button type="submit" class="button-submit button red">Kirim</button>
+					<input type="checkbox" name="policy" id="policy"> Dengan ini saya setuju dengan syarat dan ketentuan yang berlaku
 				</fieldset>
-			</form>
-			<?=validation_errors()?>		
+				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<input type="submit" class="button-submit button black" id="kirim" disabled value="Kirim">
+				</fieldset>
+				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
+				<fieldset class="percent-four-fifth">
+					<?=validation_errors()?>
+				</fieldset>
+			</form>		
 		</div><!--end contactform-->
 	</div>
+	<div class="percent-one-third column-last">text goes here</div>
 </div>
 
 <div class="space"></div>
+
+<script type="text/javascript">
+	$("#policy").change(function(){
+		if ($("#policy").is(":checked")) {
+			$('#kirim').prop('disabled', false);
+			$('#kirim').addClass('red');
+			$('#kirim').removeClass('black');
+		}
+		else{
+			$('#kirim').prop('disabled', true);
+			$('#kirim').addClass('black');
+			$('#kirim').removeClass('red');
+		}
+	});
+</script>
