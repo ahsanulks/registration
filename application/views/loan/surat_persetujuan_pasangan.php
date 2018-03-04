@@ -6,7 +6,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">Nama</td>
-		<td colspan="8">: Nama Istri</td>
+		<td colspan="8">: <?= $gender == 'Pria' ? $pasangan : $nama; ?></td>
 	</tr>
 	<tr>
 		<td colspan="2">No KTP</td>
@@ -14,26 +14,26 @@
 	</tr>
 	<tr>
 		<td colspan="2">Alamat</td>
-		<td colspan="8">: Jln. Kramat Raya No 162 Jakarta Pusat</td>
+		<td colspan="8">: <?=$alamat?></td>
 	</tr>
 	<tr>
 		<td colspan="10">Dengan ini menyatakan tidak keberatan memberikan persetujuan sepenuhnya kepada suami / istri saya:</td>
 	</tr>
 	<tr>
 		<td colspan="2">Nama</td>
-		<td colspan="8">: KADEK EVA SUPUTRA</td>
+		<td colspan="8">: <?= $gender == 'Pria' ? $nama : $pasangan; ?></td>
 	</tr>
 	<tr>
 		<td colspan="2">No KTP</td>
-		<td colspan="8">: 999123123122131</td>
+		<td colspan="8">: <?=$ktp?></td>
 	</tr>
 	<tr>
 		<td colspan="2">Alamat</td>
-		<td colspan="8">: Jln. Kramat Raya No 162 Jakarta Pusat</td>
+		<td colspan="8">: <?=$alamat?></td>
 	</tr>
 	<tr>
 		<td colspan="2">Unit Kerja</td>
-		<td colspan="8">: Divisi TI</td>
+		<td colspan="8">: <?=$unit_kerja.' '.$unit?></td>
 	</tr>
 	<tr>
 		<td colspan="10" align="justify">
@@ -51,7 +51,7 @@
 	</tr>
 	<tr><td colspan="10" height="50"></td></tr>
 	<tr>
-		<td colspan="5" align="center">KADEK EVA SUPUTRA</td>
-		<td colspan="5" align="center">Nama Istri</td>
+		<td colspan="5" align="center"><?= $gender == 'Pria' ? $nama : $pasangan; ?></td>
+		<td colspan="5" align="center"><?= $gender == 'Pria' ? $pasangan : $nama; ?></td>
 	</tr>
 </table>

@@ -3,12 +3,12 @@
 	<tr>
 		<td colspan="5">NAMA</td>
 		<td>:</td>
-		<td colspan="14">KADEK EVA SUPUTRA</td>
+		<td colspan="14"><?=$nama?></td>
 	</tr>
 	<tr>
 		<td colspan="5"><strong>DIVISI / CABANG</strong></td>
 		<td>:</td>
-		<td colspan="14">DIVIS PENGEMBANGAN TEKNOLOGI INFORMASI</td>
+		<td colspan="14"><?=$unit?></td>
 	</tr>
 	<tr>
 		<td colspan="10">
@@ -70,10 +70,10 @@
 					<td colspan="10">C. Pengajuan Pinjaman</td>
 				</tr>
 				<tr>
-					<td colspan="10">Multi Guna</td>
+					<td colspan="10"><?=$jenis_pinjaman?></td>
 				</tr>
 				<tr>
-					<td colspan="10">Rp. 150.000.000</td>
+					<td colspan="10">Rp. <?=$pinjaman?></td>
 				</tr>
 			</table>
 		</td>

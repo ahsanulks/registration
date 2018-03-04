@@ -6,19 +6,19 @@
 	</tr>
 	<tr>
 		<td colspan="2">Nama</td>
-		<td colspan="8">: KADEK EVA SUPUTRA</td>
+		<td colspan="8">: <?=$nama?></td>
 	</tr>
 	<tr>
 		<td colspan="2">Jabatan</td>
-		<td colspan="8">: Pranata Muda Pertama TI</td>
+		<td colspan="8">: <?=$jabatan?></td>
 	</tr>
 	<tr>
 		<td colspan="2">NIK</td>
-		<td colspan="8">: P82428</td>
+		<td colspan="8">: <?=$nik?></td>
 	</tr>
 	<tr>
 		<td colspan="2">Pangkat/Golongan</td>
-		<td colspan="8">: Pengatur Muda Tk.1 Perusahaan / II-b</td>
+		<td colspan="8">: <?=$golongan?> / <?=$golongan?></td>
 	</tr>
 	<tr>
 		<td colspan="2">Alamat Kantor</td>
@@ -85,6 +85,6 @@
 	<tr><td colspan="10" height="50"></td></tr>
 	<tr>
 		<td colspan="5" align="center">...............................</td>
-		<td colspan="5" align="center">KADEK EVA SUPUTRA</td>
+		<td colspan="5" align="center"><?=$nama?></td>
 	</tr>
 </table>

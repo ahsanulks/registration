@@ -25,6 +25,12 @@
 			<form method="post" action="<?=base_url()?>loan/loan_acction" name="loanform" id="loanform">
 				<h6>Data Identitas Diri</h6>
 				<fieldset class="percent-one-fifth">
+					<label>NIK <span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<input id="nik" name="nik" type="text" required>
+				</fieldset>
+				<fieldset class="percent-one-fifth">
 					<label>Nomor KTP <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
@@ -68,8 +74,9 @@
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
 					<select name='unit_kerja'>
-						<option value="0">Cabang</option>
-						<option value="Pasar Minggu">Pasar Minggu</option>
+						<option value="Divisi">Divisi</option>
+						<option value="Kanwil">Kanwil</option>
+						<option value="Cabang">Cabang</option>
 					</select>
 					<input id="unit" name="unit" style="width: auto" type="text" required>
 				</fieldset>
@@ -91,7 +98,13 @@
 					<label>Uang Pinjaman <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="pinjaman" onkeypress="var key = event.keyCode || event.charCode; return ((key  >= 48 && key  <= 57) || key == 8 || key == 43);" name="pinjaman" type="text" required>
+					<input id="pinjaman" onkeypress="var key = event.keyCode || event.charCode; return ((key  >= 48 && key  <= 57) || key == 8 || key == 43);" name="pinjaman" type="text" required placeholder="contoh: 100000000">
+				</fieldset>
+				<fieldset class="percent-one-fifth">
+					<label>Uang Pinjaman (huruf) <span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth">
+					<input type="text" name="pinjaman_deskripsi" id="pinjaman_deskripsi" required placeholder="contoh: seratus juta rupiah">
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Jangka Waktu <span>*</span></label>

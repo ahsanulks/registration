@@ -57,7 +57,7 @@ class Register extends CI_Controller {
         $html2pdf->pdf->AddPage();
         $html2pdf->pdf->WriteHTML($page, true, false, true, false, '');
         $html2pdf->pdf->lastPage();
-       	$html2pdf->output('C:\xampp\htdocs\registrasi/assets/pdf/'.$nik.'.pdf', 'F');
+       	$html2pdf->output(SAVE_PDF.$nik.'.pdf', 'F');
 	}
 
 	public function generate_input_validation(){

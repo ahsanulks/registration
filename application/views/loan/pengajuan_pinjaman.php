@@ -8,7 +8,7 @@
 	<tr>
 		<td>&nbsp;</td>
 		<td colspan="19" align="justify">
-			Dengan ini saya KADEK EVA SUPUTRA Anggota dari Divisi PENGEMBANGAN TEKNOLOGI INFORMASI Golongan / jabatan II-b / Pranata Muda Pertama II. Mengajukan kredit pinjaman Multiguna sebesar Rp 150.000.000 (<i>......................................................</i>). Untuk keperluan membangun rumah Dari pinjaman yang disetujui, saya menyatakan bahwa:
+			Dengan ini saya <?=$nama?> Anggota dari <?=$unit_kerja?> <?=$unit?> Golongan / <?=$golongan?> / <?=$jabatan?>. Mengajukan kredit pinjaman <?=$jenis_pinjaman?> sebesar Rp <?=$pinjaman?> (<i><?=$pinjaman_deskripsi?></i>). Untuk keperluan <?=$keperluan?> Dari pinjaman yang disetujui, saya menyatakan bahwa:
 		</td>
 	</tr>
 	<tr>
@@ -19,7 +19,7 @@
 	<tr>
 		<td>&nbsp;</td>
 		<td>b.</td>
-		<td colspan="18" align="justify">Sanggup  membayar kembali  pokok  pinjaman  ditambah  jasa  sesuai  dengan ketentuan yang berlaku dari saldo pinjaman saya sebanyak 84 kali setiap bulan hingga  lunas.</td>
+		<td colspan="18" align="justify">Sanggup  membayar kembali  pokok  pinjaman  ditambah  jasa  sesuai  dengan ketentuan yang berlaku dari saldo pinjaman saya sebanyak <?=$waktu?> kali setiap bulan hingga  lunas.</td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
@@ -45,7 +45,7 @@
 					<td align="center">Pemohon,</td>
 				</tr>
 				<tr><td height="40"></td></tr>
-				<tr><td align="center">( KADEK EVA SUPUTRA )</td></tr>
+				<tr><td align="center">( <?=$nama?> )</td></tr>
 			</table>
 		</td>
 	</tr>
@@ -115,7 +115,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td colspan="19" style="text-align: justify; line-height: 1.25">Dapat/tidak dapat diberikan   pinjaman sebesar Rp 150.000.000 dan diangsur 84 kali/bln mulai..............</td>
+					<td colspan="19" style="text-align: justify; line-height: 1.25">Dapat/tidak dapat diberikan   pinjaman sebesar Rp <?=$pinjaman?> dan diangsur <?=$waktu?> kali/bln mulai..............</td>
 				</tr>
 				<tr><td height="10" colspan="20"></td></tr>
 				<tr>
@@ -134,7 +134,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td colspan="39">Setuju diberikan pinjaman sebesar Rp 150.000.000 (seratus lima puluh juta rupiah) dan diangsur 84 Kali setiap bulan terhitung mulai bulan ...............</td>
+					<td colspan="39">Setuju diberikan pinjaman sebesar Rp <?=$pinjaman?> (<?=$pinjaman_deskripsi?>) dan diangsur <?=$waktu?> Kali setiap bulan terhitung mulai bulan ...............</td>
 				</tr>
 				<tr>
 					<td colspan="25"></td>
