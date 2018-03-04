@@ -22,7 +22,7 @@
 <div class="centered-wrapper">
 	<div class="percent-two-third">
 		<div id="loanform">
-			<form method="post" action="<?=base_url()?>register/register_action" name="loanform" id="loanform">
+			<form method="post" action="<?=base_url()?>loan/loan_acction" name="loanform" id="loanform">
 				<h6>Data Identitas Diri</h6>
 				<fieldset class="percent-one-fifth">
 					<label>Nomor KTP <span>*</span></label>
