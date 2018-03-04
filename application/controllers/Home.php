@@ -8,8 +8,4 @@ class Home extends CI_Controller {
 		$this->load->view('pages/index');
 		$this->load->view('layouts/footer');
 	}
-
-	public function registration(){
-		
-	}
 }
