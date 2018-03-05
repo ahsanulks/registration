@@ -3685,3 +3685,45 @@ ul.customlist li i {
 	padding: 1% 1%;
 	background:#f7f7f7;
 }
+
+
+#loanform label {
+	clear:both;
+}	
+
+#loanform input[type=text] {
+	margin-bottom:10px;
+	width:100%;
+	padding:1% 1%;
+	height:20px;
+	line-height:20px;
+	background:#f7f7f7;
+
+}
+
+.button-submit {
+	font-size:12px;
+	clear:both;
+	cursor:pointer;
+	margin:0;
+}
+
+#loanform input:focus, #loanform textarea:focus {
+	outline:none;
+}
+
+#loanform input[type=submit]:hover {
+	
+}
+
+#loanform select {
+	padding: 1%;
+	width: auto;
+}
+
+#loanform textarea { 
+	height:130px;
+	clear:both;
+	padding: 1% 1%;
+	background:#f7f7f7;
+}

@@ -31,7 +31,9 @@ class Register extends CI_Controller {
         	);
         	$query = http_build_query($data);
         	$pdf = $this->generate_form_registration_pdf($query, $this->input->post('nik'));
-        	// $this->send_mail('ahsanulkh996@gmail.com', $this->input->post('nik'));
+
+			$this->load->library('sendmail');
+        	$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
         	redirect(base_url('registration'));
         }
 	}
@@ -55,7 +57,7 @@ class Register extends CI_Controller {
         $html2pdf->pdf->AddPage();
         $html2pdf->pdf->WriteHTML($page, true, false, true, false, '');
         $html2pdf->pdf->lastPage();
-       	$html2pdf->output('C:\xampp\htdocs\registrasi/assets/pdf/'.$nik.'.pdf', 'F');
+       	$html2pdf->output(SAVE_PDF.$nik.'.pdf', 'F');
 	}
 
 	public function generate_input_validation(){
@@ -69,27 +71,5 @@ class Register extends CI_Controller {
 		        array('field' => 'alamat', 'label' => 'Alamat rumah', 'rules' => 'required')
 		);
 		return $config;
-	}
-
-	public function send_mail($email, $nik){
-		$config = Array(
-		    'protocol'  => 'smtp',
-		    'smtp_host' => 'ssl://smtp.gmail.com',
-		    'smtp_port' => 465,
-		    'smtp_user' => 'ahsanulkh996@gmail.com',
-		    'smtp_pass' => 'sugnncblgivhchro',
-		    'mailtype'  => 'html', 
-		    'charset'   => 'utf-8'
-		);
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-
-        $this->email->from('ahsanulkh996@gmail.com', 'hello');
-        $this->email->to($email); 
-
-        $this->email->subject('Email Test');
-        $this->email->message('hello');
-        $this->email->attach(base_url('assets/pdf/'.$nik.'.pdf'));  
-		$this->email->send();
 	}
 }

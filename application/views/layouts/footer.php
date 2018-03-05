@@ -4,7 +4,7 @@
 				<div class="one-half">
 					<h3>Tentang Kami</h3>
 					<p>Kami adalah kami, tidak ada yang seperti kami. Kami adalah kami, tidak ada yang seperti kami. Kami adalah kami, tidak ada yang seperti kami. Kami adalah kami, tidak ada yang seperti kami. Kami adalah kami, tidak ada yang seperti kami. </p>
-					<img src="images/dark-logo.png" alt="footer logo" />
+					<img src="<?=base_url()?>assets/images/dark-logo.png" alt="footer logo" />
 				</div><!--end percent-one-half-->
 				<div class="one-half column-last">
 					<div class="percent-one-half">
