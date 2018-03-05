@@ -160,6 +160,10 @@
 				<fieldset class="percent-four-fifth column-last">
 					<input type="submit" class="button-submit button black" id="kirim" disabled value="Kirim">
 				</fieldset>
+				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
+				<fieldset class="percent-four-fifth">
+					<?=validation_errors()?>
+				</fieldset>
 			</form>
 		</div>
 	</div>

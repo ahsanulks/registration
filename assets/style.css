@@ -2635,7 +2635,7 @@ span.pages {
 #contactform input[type=text] {
 	margin-bottom:10px;
 	width:89%;
-	padding:3% 5%;
+	padding:1% 1%;
 	height:20px;
 	line-height:20px;
 	background:#f7f7f7;
@@ -3722,6 +3722,47 @@ ul.customlist li i {
 }
 
 #loanform textarea { 
+	height:130px;
+	clear:both;
+	padding: 1% 1%;
+	background:#f7f7f7;
+}
+
+#simulationform label {
+	clear:both;
+}	
+
+#simulationform input[type=text] {
+	margin-bottom:10px;
+	width:100%;
+	padding:1% 1%;
+	height:20px;
+	line-height:20px;
+	background:#f7f7f7;
+
+}
+
+.button-submit {
+	font-size:12px;
+	clear:both;
+	cursor:pointer;
+	margin:0;
+}
+
+#simulationform input:focus, #simulationform textarea:focus {
+	outline:none;
+}
+
+#simulationform input[type=submit]:hover {
+	
+}
+
+#simulationform select {
+	padding: 1%;
+	width: auto;
+}
+
+#simulationform textarea { 
 	height:130px;
 	clear:both;
 	padding: 1% 1%;
