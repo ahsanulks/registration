@@ -20,24 +20,7 @@ class Loan extends CI_Controller {
 			$this->load->view('layouts/footer');
         }
         else{
-        	$data = array(
-        		'ktp' => $this->input->post('ktp'),
-        		'nama' => strtoupper($this->input->post('nama')),
-        		'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-        		'alamat' => $this->input->post('alamat'),
-        		'gender' => $this->input->post('gender'),
-        		'pasangan' => $this->input->post('pasangan'),
-        		'unit_kerja' => $this->input->post('unit_kerja'),
-        		'unit' => $this->input->post('unit'),
-        		'nik' => $this->input->post('nik'),
-        		'jabatan' => $this->input->post('jabatan'),
-        		'golongan' => $this->input->post('golongan'),
-        		'pinjaman' => $this->input->post('pinjaman'),
-        		'pinjaman_deskripsi' => $this->input->post('pinjaman_deskripsi'),
-        		'waktu' => $this->input->post('waktu'),
-        		'jenis_pinjaman' => $this->input->post('jenis_pinjaman'),
-        		'keperluan' => $this->input->post('keperluan'),
-        	);
+        	$data = $this->get_post_data();
         	$query = http_build_query($data);
         	$this->generate_pdf($query, $data['nik']);
 
@@ -92,80 +75,74 @@ class Loan extends CI_Controller {
 	}
 
 	public function persetujuan_credit(){
-		$data = array(
-			'nama' => $this->input->get('nama'),
-			'unit' => $this->input->get('unit'),
-			'jenis_pinjaman' => $this->input->get('jenis_pinjaman'),
-			'pinjaman' => $this->input->get('pinjaman')
-		);
+		$data = $this->get_data();
 		$this->load->view('loan/persetujuan_kredit', $data); 
 	}
 
 	public function pengajuan_pinjaman(){ 
-		$data = array(
-			'nama' => $this->input->get('nama'),
-			'unit_kerja' => $this->input->get('unit_kerja'),
-			'unit' => $this->input->get('unit'),
-			'golongan' => $this->input->get('golongan'),
-			'jabatan' => $this->input->get('jabatan'),
-			'jenis_pinjaman' => $this->input->get('jenis_pinjaman'),
-			'pinjaman' => $this->input->get('pinjaman'),
-			'pinjaman_deskripsi' => $this->input->get('pinjaman_deskripsi'),
-			'keperluan' => $this->input->get('keperluan'),
-			'waktu' => $this->input->get('waktu')
-		);
+		$data = $this->get_data();
 		$this->load->view('loan/pengajuan_pinjaman', $data); 
 	}
 
 	public function pernyataan(){
-	 	$data = array(
-			'nama' => $this->input->get('nama'),
-			'nik' => $this->input->get('nik'),
-			'unit_kerja' => $this->input->get('unit_kerja'),
-			'unit' => $this->input->get('unit'),
-			'golongan' => $this->input->get('golongan'),
-			'jabatan' => $this->input->get('jabatan')
-		);
+	 	$data = $this->get_data();
 		$this->load->view('loan/surat_pernyataan', $data); 
 	}
 
 	public function surat_kuasa(){ 
-		$data = array(
-			'nama' => $this->input->get('nama'),
-			'nik' => $this->input->get('nik'),
-			'unit_kerja' => $this->input->get('unit_kerja'),
-			'unit' => $this->input->get('unit'),
-			'golongan' => $this->input->get('golongan'),
-			'jabatan' => $this->input->get('jabatan')
-		);
+		$data = $this->get_data();
 		$this->load->view('loan/surat_kuasa', $data); 
 	}
 
 	public function surat_kuasa_pemotongan_penghasilan(){ 
-		$data = array(
-			'nama' => $this->input->get('nama'),
-			'nik' => $this->input->get('nik'),
-			'unit_kerja' => $this->input->get('unit_kerja'),
-			'unit' => $this->input->get('unit'),
-			'golongan' => $this->input->get('golongan'),
-			'jabatan' => $this->input->get('jabatan')
-		);
+		$data = $this->get_data();
 		$this->load->view('loan/surat_kuasa_pemotongan_gaji', $data); 
 	}
 
 	public function surat_persetujuan_pasangan(){ 
-		$data = array(
-			'nama' => $this->input->get('nama'),
-			'nik' => $this->input->get('nik'),
-			'unit_kerja' => $this->input->get('unit_kerja'),
-			'unit' => $this->input->get('unit'),
-			'golongan' => $this->input->get('golongan'),
-			'jabatan' => $this->input->get('jabatan'),
-			'pasangan' => $this->input->get('pasangan'),
-			'alamat' => $this->input->get('alamat'),
-			'gender' => $this->input->get('gender'),
-			'ktp' => $this->input->get('ktp')
-		);
+		$data = $this->get_data();
 		$this->load->view('loan/surat_persetujuan_pasangan', $data); 
+	}
+
+	public function get_data(){
+		return $data = array(
+	    		'ktp' => $this->input->get('ktp'),
+	    		'nama' => strtoupper($this->input->get('nama')),
+	    		'tanggal_lahir' => $this->input->get('tanggal_lahir'),
+	    		'alamat' => $this->input->get('alamat'),
+	    		'gender' => $this->input->get('gender'),
+	    		'pasangan' => $this->input->get('pasangan'),
+	    		'unit_kerja' => $this->input->get('unit_kerja'),
+	    		'unit' => $this->input->get('unit'),
+	    		'nik' => $this->input->get('nik'),
+	    		'jabatan' => $this->input->get('jabatan'),
+	    		'golongan' => $this->input->get('golongan'),
+	    		'pinjaman' => $this->input->get('pinjaman'),
+	    		'pinjaman_deskripsi' => $this->input->get('pinjaman_deskripsi'),
+	    		'waktu' => $this->input->get('waktu'),
+	    		'jenis_pinjaman' => $this->input->get('jenis_pinjaman'),
+	    		'keperluan' => $this->input->get('keperluan'),
+	    	);
+	}
+
+	public function get_post_data(){
+		return $data = array(
+	        		'ktp' => $this->input->post('ktp'),
+	        		'nama' => strtoupper($this->input->post('nama')),
+	        		'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+	        		'alamat' => $this->input->post('alamat'),
+	        		'gender' => $this->input->post('gender'),
+	        		'pasangan' => $this->input->post('pasangan'),
+	        		'unit_kerja' => $this->input->post('unit_kerja'),
+	        		'unit' => $this->input->post('unit'),
+	        		'nik' => $this->input->post('nik'),
+	        		'jabatan' => $this->input->post('jabatan'),
+	        		'golongan' => $this->input->post('golongan'),
+	        		'pinjaman' => $this->input->post('pinjaman'),
+	        		'pinjaman_deskripsi' => $this->input->post('pinjaman_deskripsi'),
+	        		'waktu' => $this->input->post('waktu'),
+	        		'jenis_pinjaman' => $this->input->post('jenis_pinjaman'),
+	        		'keperluan' => $this->input->post('keperluan'),
+	        	);
 	}
 }
