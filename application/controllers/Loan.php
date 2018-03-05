@@ -107,21 +107,21 @@ class Loan extends CI_Controller {
 	public function get_data(){
 		return $data = array(
 	    		'ktp' => $this->input->get('ktp'),
-	    		'nama' => strtoupper($this->input->get('nama')),
+	    		'nama' => $this->input->get('nama'),
 	    		'tanggal_lahir' => $this->input->get('tanggal_lahir'),
 	    		'alamat' => $this->input->get('alamat'),
 	    		'gender' => $this->input->get('gender'),
-	    		'pasangan' => $this->input->get('pasangan'),
 	    		'unit_kerja' => $this->input->get('unit_kerja'),
+	    		'pasangan' => $this->input->get('pasangan'),
 	    		'unit' => $this->input->get('unit'),
-	    		'nik' => $this->input->get('nik'),
 	    		'jabatan' => $this->input->get('jabatan'),
 	    		'golongan' => $this->input->get('golongan'),
+	    		'nik' => $this->input->get('nik'),
 	    		'pinjaman' => $this->input->get('pinjaman'),
-	    		'pinjaman_deskripsi' => $this->input->get('pinjaman_deskripsi'),
 	    		'waktu' => $this->input->get('waktu'),
-	    		'jenis_pinjaman' => $this->input->get('jenis_pinjaman'),
+	    		'pinjaman_deskripsi' => $this->input->get('pinjaman_deskripsi'),
 	    		'keperluan' => $this->input->get('keperluan'),
+	    		'jenis_pinjaman' => $this->input->get('jenis_pinjaman')
 	    	);
 	}
 
