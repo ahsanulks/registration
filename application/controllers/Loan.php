@@ -4,6 +4,12 @@ use Spipu\Html2Pdf\Html2Pdf;
 
 class Loan extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('loans');
+		$this->load->library('dates');
+	}
+
 	public function index(){
 		$this->load->view('layouts/header');
 		$this->load->view('pages/loan');
@@ -15,17 +21,20 @@ class Loan extends CI_Controller {
 		$this->form_validation->set_rules($this->generate_input_validation());
 
 		if ($this->form_validation->run() == FALSE){
-            $this->load->view('layouts/header');
-			$this->load->view('pages/loan');
-			$this->load->view('layouts/footer');
+        	$this->session->set_userdata('notif', false);
+            redirect(base_url('permohonan-pinjaman'));
         }
         else{
         	$data = $this->get_post_data();
         	$query = http_build_query($data);
         	$this->generate_pdf($query, $data['nik']);
 
+        	$data['tanggal_lahir'] = $this->dates->change_format($data['tanggal_lahir']);
+        	$this->loans->create($data);
+
 			$this->load->library('sendmail');
 			$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
+        	$this->session->set_userdata('notif', true);
 			redirect(base_url('permohonan-pinjaman'));
         }
 	}
@@ -138,7 +147,7 @@ class Loan extends CI_Controller {
 	        		'nik' => $this->input->post('nik'),
 	        		'jabatan' => $this->input->post('jabatan'),
 	        		'golongan' => $this->input->post('golongan'),
-	        		'pinjaman' => $this->input->post('pinjaman'),
+	        		'pinjaman' => number_format($this->input->post('pinjaman'),2,",","."),
 	        		'pinjaman_deskripsi' => $this->input->post('pinjaman_deskripsi'),
 	        		'waktu' => $this->input->post('waktu'),
 	        		'jenis_pinjaman' => $this->input->post('jenis_pinjaman'),

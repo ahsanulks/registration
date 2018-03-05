@@ -45,7 +45,7 @@
 	<tr><td colspan="10">&nbsp;</td></tr>
 	<tr>
 		<td colspan="5"></td>
-		<td colspan="5" align="center">Jakarta, 13 Desember 2013</td>
+		<td colspan="5" align="center">Jakarta, ..............................</td>
 	</tr>
 	<tr>
 		<td colspan="5"></td>

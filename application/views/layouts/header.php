@@ -26,6 +26,8 @@
 	<!-- setting mobile environment -->		
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/responsive.css" media="screen" />	
 	
+	<!-- css for datepicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<!--[if IE 7]>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome-ie7.min.css">
 	<![endif]-->
@@ -35,6 +37,7 @@
 	<![endif]-->
 
 	<script type="text/javascript" src="<?=base_url()?>assets/js/jquery-1.8.3.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="<?=base_url()?>assets/js/hoverIntent.js"></script>
 	<script type="text/javascript" src="<?=base_url()?>assets/js/superfish.js"></script>
 	<script type="text/javascript" src="<?=base_url()?>assets/js/jquery.jcarousel.js"></script>

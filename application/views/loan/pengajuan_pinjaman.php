@@ -39,7 +39,7 @@
 		<td colspan="10">
 			<table style="line-height: 1.5;">
 				<tr>
-					<td align="center">Jakarta, 13 Desember 2013</td>
+					<td align="center">Jakarta, ..............................</td>
 				</tr>
 				<tr>
 					<td align="center">Pemohon,</td>
