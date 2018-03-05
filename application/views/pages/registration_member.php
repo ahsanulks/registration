@@ -21,6 +21,18 @@
 
 <div class="centered-wrapper">
 	<div class="percent-two-third">
+		<?php 
+			if (isset($this->session->notif)) {
+				if ($this->session->notif) { ?>
+					<div class="box-success"><strong>Sukses!</strong> Registrasi berhasil</div>
+				<?php
+				} else { ?>
+					<div class="box-error"><strong>Gagal!</strong> Registrasi gagal</div>
+				<?php
+				}
+				$this->session->sess_destroy();
+			}
+		?>
 		<h6>Permohonan Anggota</h6>
 		<div id="registerform">
 			<form method="post" action="<?=base_url()?>register/register_action" name="registerform" id="registerform">
@@ -105,4 +117,10 @@
 			$('#kirim').removeClass('red');
 		}
 	});
-</script>
+
+	$("#tanggal_lahir").datepicker({
+		dateFormat: "dd-mm-yy",
+		changeYear: true,
+		yearRange: "1950:2000"
+	});
+</script>\

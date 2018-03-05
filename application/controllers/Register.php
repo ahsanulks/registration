@@ -4,6 +4,12 @@ use Spipu\Html2Pdf\Html2Pdf;
 
 class Register extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('users');
+		$this->load->library('dates');
+	}
+
 	public function index(){
 		$this->load->view('layouts/header');
 		$this->load->view('pages/registration_member');
@@ -15,25 +21,28 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules($this->generate_input_validation());
 
 		if ($this->form_validation->run() == FALSE){
-            $this->load->view('layouts/header');
-			$this->load->view('pages/registration_member');
-			$this->load->view('layouts/footer');
+        	$this->session->set_userdata('notif', false);
+        	redirect(base_url('registration'));
         }
         else{
         	$data = array(
         		'nik' => $this->input->post('nik'),
         		'nama' => $this->input->post('nama'),
         		'tempat_lahir' => $this->input->post('tempat_lahir'),
-        		'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+        		'tanggal_lahir' =>$this->input->post('tanggal_lahir'),
         		'golongan' => $this->input->post('golongan'),
         		'jabatan' => $this->input->post('jabatan'),
         		'alamat' => $this->input->post('alamat')
         	);
         	$query = http_build_query($data);
-        	$pdf = $this->generate_form_registration_pdf($query, $this->input->post('nik'));
+        	$this->generate_form_registration_pdf($query, $this->input->post('nik'));
+
+        	$data['tanggal_lahir'] = $this->dates->change_format($data['tanggal_lahir']);
+        	$this->users->create($data);
 
 			$this->load->library('sendmail');
         	$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
+        	$this->session->set_userdata('notif', true);
         	redirect(base_url('registration'));
         }
 	}

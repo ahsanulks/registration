@@ -21,6 +21,18 @@
 
 <div class="centered-wrapper">
 	<div class="percent-two-third">
+		<?php 
+			if (isset($this->session->notif)) {
+				if ($this->session->notif) { ?>
+					<div class="box-success"><strong>Sukses!</strong> Registrasi berhasil</div>
+				<?php
+				} else { ?>
+					<div class="box-error"><strong>Gagal!</strong> Registrasi gagal</div>
+				<?php
+				}
+				$this->session->sess_destroy();
+			}
+		?>
 		<div id="loanform">
 			<form method="post" action="<?=base_url()?>loan/loan_acction" name="loanform" id="loanform">
 				<h6>Data Identitas Diri</h6>
@@ -167,5 +179,11 @@
 			$('#kirim').addClass('black');
 			$('#kirim').removeClass('red');
 		}
+	});
+
+	$("#tanggal_lahir").datepicker({
+		dateFormat: "dd-mm-yy",
+		changeYear: true,
+		yearRange: "1950:2000"
 	});
 </script>
