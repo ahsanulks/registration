@@ -10,11 +10,11 @@
 	</tr>
 	<tr>
 		<td colspan="2">No KTP</td>
-		<td colspan="8">: 999123123122234</td>
+		<td colspan="8">: <?=$ktp_pasangan?></td>
 	</tr>
 	<tr>
 		<td colspan="2">Alamat</td>
-		<td colspan="8">: <?=$alamat?></td>
+		<td colspan="8">: <?=$alamat_pasangan?></td>
 	</tr>
 	<tr>
 		<td colspan="10">Dengan ini menyatakan tidak keberatan memberikan persetujuan sepenuhnya kepada suami / istri saya:</td>
