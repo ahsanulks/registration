@@ -3664,6 +3664,17 @@ ul.customlist li i {
 
 }
 
+#registerform input[type=email] {
+	margin-bottom:10px;
+	width:100%;
+	padding:1% 1%;
+	height:20px;
+	line-height:20px;
+	background:#f7f7f7;
+	border: 1px solid #EBEBEB;
+
+}
+
 .button-submit {
 	font-size:12px;
 	clear:both;
@@ -3767,4 +3778,15 @@ ul.customlist li i {
 	clear:both;
 	padding: 1% 1%;
 	background:#f7f7f7;
+}
+
+#loanform input[type=email] {
+	margin-bottom:10px;
+	width:100%;
+	padding:1% 1%;
+	height:20px;
+	line-height:20px;
+	background:#f7f7f7;
+	border: 1px solid #EBEBEB;
+
 }

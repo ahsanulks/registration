@@ -34,6 +34,7 @@ class Loan extends CI_Controller {
 
 			$this->load->library('sendmail');
 			$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
+			$this->sendmail->send_to($data['email'], 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
         	$this->session->set_userdata('notif', true);
 			redirect(base_url('permohonan-pinjaman'));
         }
@@ -55,6 +56,7 @@ class Loan extends CI_Controller {
 	        array('field' => 'pinjaman_deskripsi', 'label' => 'Uang Pinjaman (huruf)', 'rules' => 'required'),
 	        array('field' => 'keperluan', 'label' => 'Keperluan', 'rules' => 'required'),
 	        array('field' => 'policy', 'label' => 'Pernyataan', 'rules' => 'required'),
+	        array('field' => 'email', 'label' => 'Email', 'rules' => 'required')
 		);
 		return $config;
 	}
@@ -147,11 +149,12 @@ class Loan extends CI_Controller {
 	        		'nik' => $this->input->post('nik'),
 	        		'jabatan' => $this->input->post('jabatan'),
 	        		'golongan' => $this->input->post('golongan'),
-	        		'pinjaman' => number_format($this->input->post('pinjaman'),2,",","."),
+	        		'pinjaman' => $this->input->post('pinjaman').',00',
 	        		'pinjaman_deskripsi' => $this->input->post('pinjaman_deskripsi'),
 	        		'waktu' => $this->input->post('waktu'),
 	        		'jenis_pinjaman' => $this->input->post('jenis_pinjaman'),
 	        		'keperluan' => $this->input->post('keperluan'),
+	        		'email' => $this->input->post('email')
 	        	);
 	}
 }

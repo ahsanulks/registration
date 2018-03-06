@@ -27,7 +27,7 @@
 					<label>Uang Pinjaman <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="pinjaman" name="pinjaman" type="text" required>
+					<input id="pinjaman" name="pinjaman" type="text" required onkeypress="var key = event.keyCode || event.charCode; return ((key  >= 48 && key  <= 57) || key == 8 || key == 43);" onkeyup="change()">
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Bunga dalam %<span>*</span></label>
@@ -80,5 +80,14 @@
 		  },
 		  dataType: 'JSON'
 		});
+	}
+
+	function change(){
+		if (isNaN(parseInt(document.getElementById('pinjaman').value))) {
+		}
+		else{
+			var value = document.getElementById('pinjaman').value;
+			document.getElementById('pinjaman').value = Number(value.split('.').join('')).toLocaleString('id');
+		}
 	}
 </script>

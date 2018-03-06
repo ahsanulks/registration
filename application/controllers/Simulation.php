@@ -10,7 +10,7 @@ class Simulation extends CI_Controller {
 	}
 
 	public function calculate_loan(){
-		$pinjaman = $this->input->get('pinjaman');
+		$pinjaman = str_replace('.', '', $this->input->get('pinjaman'));
 		$bunga = $this->input->get('bunga');
 		$waktu = $this->input->get('waktu');
 

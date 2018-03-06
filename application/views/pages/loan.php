@@ -58,7 +58,13 @@
 					<label>Tanggal Lahir <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="tanggal_lahir" name="tanggal_lahir" type="text" required>
+					<input id="tanggal_lahir" name="tanggal_lahir" type="text" required readonly>
+				</fieldset>
+				<fieldset class="percent-one-fifth">
+					<label>Email <span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<input id="email" name="email" type="email" required>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Alamat Rumah <span>*</span></label>
@@ -110,7 +116,7 @@
 					<label>Uang Pinjaman <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="pinjaman" onkeypress="var key = event.keyCode || event.charCode; return ((key  >= 48 && key  <= 57) || key == 8 || key == 43);" name="pinjaman" type="text" required placeholder="contoh: 100000000">
+					<input id="pinjaman" onkeypress="var key = event.keyCode || event.charCode; return ((key  >= 48 && key  <= 57) || key == 8 || key == 43);" name="pinjaman" type="text" required onkeyup="change()">
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Uang Pinjaman (huruf) <span>*</span></label>
@@ -190,4 +196,13 @@
 		changeYear: true,
 		yearRange: "1950:2000"
 	});
+
+	function change(){
+		if (isNaN(parseInt(document.getElementById('pinjaman').value))) {
+		}
+		else{
+			var value = document.getElementById('pinjaman').value;
+			document.getElementById('pinjaman').value = Number(value.split('.').join('')).toLocaleString('id');
+		}
+	}
 </script>

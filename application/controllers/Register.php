@@ -25,15 +25,7 @@ class Register extends CI_Controller {
         	redirect(base_url('registration'));
         }
         else{
-        	$data = array(
-        		'nik' => $this->input->post('nik'),
-        		'nama' => $this->input->post('nama'),
-        		'tempat_lahir' => $this->input->post('tempat_lahir'),
-        		'tanggal_lahir' =>$this->input->post('tanggal_lahir'),
-        		'golongan' => $this->input->post('golongan'),
-        		'jabatan' => $this->input->post('jabatan'),
-        		'alamat' => $this->input->post('alamat')
-        	);
+        	$data = $this->get_post_data();	
         	$query = http_build_query($data);
         	$this->generate_form_registration_pdf($query, $this->input->post('nik'));
 
@@ -42,6 +34,7 @@ class Register extends CI_Controller {
 
 			$this->load->library('sendmail');
         	$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
+        	$this->sendmail->send_to($data['email'], 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
         	$this->session->set_userdata('notif', true);
         	redirect(base_url('registration'));
         }
@@ -77,8 +70,22 @@ class Register extends CI_Controller {
 		        array('field' => 'tanggal_lahir', 'label' => 'Tanggal Lahir', 'rules' => 'required'),
 		        array('field' => 'golongan', 'label' => 'Grade', 'rules' => 'required'),
 		        array('field' => 'jabatan', 'label' => 'Jabatan', 'rules' => 'required'),
-		        array('field' => 'alamat', 'label' => 'Alamat rumah', 'rules' => 'required')
+		        array('field' => 'alamat', 'label' => 'Alamat rumah', 'rules' => 'required'),
+		        array('field' => 'email', 'label' => 'Email', 'rules' => 'required')
 		);
 		return $config;
+	}
+
+	public function get_post_data(){
+		return $data = array(
+        		'nik' => $this->input->post('nik'),
+        		'nama' => $this->input->post('nama'),
+        		'tempat_lahir' => $this->input->post('tempat_lahir'),
+        		'tanggal_lahir' =>$this->input->post('tanggal_lahir'),
+        		'golongan' => $this->input->post('golongan'),
+        		'jabatan' => $this->input->post('jabatan'),
+        		'alamat' => $this->input->post('alamat'),
+        		'email' => $this->input->post('email')
+        	);
 	}
 }
