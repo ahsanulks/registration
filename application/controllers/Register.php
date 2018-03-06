@@ -39,8 +39,8 @@ class Register extends CI_Controller {
         	$data['tanggal_lahir'] = $this->dates->change_format($data['tanggal_lahir']);
         	$this->users->create($data);
 
-        	$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
-        	$this->sendmail->send_to($data['email'], 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
+        	$this->sendmail->send_to(ADMIN_EMAIL, 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
+        	$this->sendmail->send_to($data['email'], 'testing', 'testing bosq');
         	$this->session->set_userdata('notif', true);
         	redirect(base_url('registration'));
         }

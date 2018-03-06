@@ -37,8 +37,8 @@ class Loan extends CI_Controller {
         	$data['tanggal_lahir'] = $this->dates->change_format($data['tanggal_lahir']);
         	$this->loans->create($data);
 			$this->load->library('sendmail');
-			$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
-			$this->sendmail->send_to($data['email'], 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
+			$this->sendmail->send_to(ADMIN_EMAIL, 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
+			$this->sendmail->send_to($data['email'], 'testing 123', '123 bosq');
         	$this->session->set_userdata('notif', true);
 			redirect(base_url('permohonan-pinjaman'));
         }
