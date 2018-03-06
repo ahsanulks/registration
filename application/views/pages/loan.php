@@ -150,7 +150,7 @@
 					<label>Kode Captcha <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="captcha" name="captcha" type="text" required>
+					<div class="g-recaptcha" data-sitekey="6LeX4UoUAAAAAHvamdobK-bOnp4BxpRtJTnVuM9A"></div>
 				</fieldset>
 				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
 				<fieldset class="percent-four-fifth column-last">
