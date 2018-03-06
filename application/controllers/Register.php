@@ -17,9 +17,15 @@ class Register extends CI_Controller {
 	}
 
 	public function register_action(){
+		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET);
+		$resp = $recaptcha->verify($this->input->post('g-recaptcha-response'), $this->input->server('REMOTE_ADDR'));
+		if ($resp->isSuccess() === FALSE) {
+			$this->session->set_userdata('notif', false);
+        	redirect(base_url('registration'));
+		}
+
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($this->generate_input_validation());
-
 		if ($this->form_validation->run() == FALSE){
         	$this->session->set_userdata('notif', false);
         	redirect(base_url('registration'));

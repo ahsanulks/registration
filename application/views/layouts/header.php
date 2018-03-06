@@ -60,6 +60,8 @@
 	<!-- Google Web Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 
+	<!-- recapthca-->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body class="home"> 

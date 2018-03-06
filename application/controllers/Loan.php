@@ -17,9 +17,15 @@ class Loan extends CI_Controller {
 	}
 
 	public function loan_acction(){
+		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET);
+		$resp = $recaptcha->verify($this->input->post('g-recaptcha-response'), $this->input->server('REMOTE_ADDR'));
+		if ($resp->isSuccess() === FALSE) {
+			$this->session->set_userdata('notif', false);
+        	redirect(base_url('registration'));
+		}
+
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules($this->generate_input_validation());
-
 		if ($this->form_validation->run() == FALSE){
         	$this->session->set_userdata('notif', false);
             redirect(base_url('permohonan-pinjaman'));
@@ -28,10 +34,8 @@ class Loan extends CI_Controller {
         	$data = $this->get_post_data();
         	$query = http_build_query($data);
         	$this->generate_pdf($query, $data['nik']);
-
         	$data['tanggal_lahir'] = $this->dates->change_format($data['tanggal_lahir']);
         	$this->loans->create($data);
-
 			$this->load->library('sendmail');
 			$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
 			$this->sendmail->send_to($data['email'], 'testing', 'testing bosq', base_url('assets/pdf/pinjaman-'.$data['nik'].'.pdf'));
