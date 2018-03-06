@@ -3,10 +3,10 @@ User registration and send email with generate pdf with codeigniter
 
 # CONFIG
 
-##SET DIRECTORI PENYIMPANAN FILE
+## SET DIRECTORI PENYIMPANAN FILE
 ```Application/config/constants.php on SAVE_PDF```
 
-##SET DIRECTORI ATTACHMENT FILE
+## SET DIRECTORI ATTACHMENT FILE
 ```Application/controller/Loan.php on method loan_action when call sendemail```
 ```Application/controller/Registration.php on method register_action when call sendemail```
 
