@@ -10,8 +10,8 @@ class Sendmail {
 		    'protocol'  => 'smtp',
 		    'smtp_host' => 'ssl://smtp.gmail.com',
 		    'smtp_port' => 465,
-		    'smtp_user' => 'ahsanulkh996@gmail.com',
-		    'smtp_pass' => 'sugnncblgivhchro',
+		    'smtp_user' => '',
+		    'smtp_pass' => '',
 		    'mailtype'  => 'html', 
 		    'charset'   => 'utf-8'
 			);
@@ -28,6 +28,6 @@ class Sendmail {
 	    	$CI->email->attach($attach);
 	    } 
 
-			$CI->email->send();
+		$CI->email->send();
     }
 }

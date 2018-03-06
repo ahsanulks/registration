@@ -4,11 +4,12 @@ User registration and send email with generate pdf with codeigniter
 # CONFIG
 
 ## SET DIRECTORI PENYIMPANAN FILE
+Must real path on server e.g. "var/www/localhost/registration/assets/generate/"
 ```Application/config/constants.php on SAVE_PDF```
 
 ## SET DIRECTORI ATTACHMENT FILE
-```Application/controller/Loan.php on method loan_action when call sendemail```
-```Application/controller/Registration.php on method register_action when call sendemail```
+```Application/controller/Loan.php on method loan_action when call sendmail```
+```Application/controller/Registration.php on method register_action when call sendmail```
 
 ## SET RECAPTCHA GOOGLE
 ### Set SECREAT KEY
