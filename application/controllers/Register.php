@@ -25,16 +25,7 @@ class Register extends CI_Controller {
         	redirect(base_url('registration'));
         }
         else{
-        	$data = array(
-        		'nik' => $this->input->post('nik'),
-        		'nama' => $this->input->post('nama'),
-        		'tempat_lahir' => $this->input->post('tempat_lahir'),
-        		'tanggal_lahir' =>$this->input->post('tanggal_lahir'),
-        		'golongan' => $this->input->post('golongan'),
-        		'jabatan' => $this->input->post('jabatan'),
-        		'alamat' => $this->input->post('alamat'),
-        		'email' => $this->input->post('email')
-        	);
+        	$data = $this->get_post_data();	
         	$query = http_build_query($data);
         	$this->generate_form_registration_pdf($query, $this->input->post('nik'));
 
@@ -83,5 +74,18 @@ class Register extends CI_Controller {
 		        array('field' => 'email', 'label' => 'Email', 'rules' => 'required')
 		);
 		return $config;
+	}
+
+	public function get_post_data(){
+		return $data = array(
+        		'nik' => $this->input->post('nik'),
+        		'nama' => $this->input->post('nama'),
+        		'tempat_lahir' => $this->input->post('tempat_lahir'),
+        		'tanggal_lahir' =>$this->input->post('tanggal_lahir'),
+        		'golongan' => $this->input->post('golongan'),
+        		'jabatan' => $this->input->post('jabatan'),
+        		'alamat' => $this->input->post('alamat'),
+        		'email' => $this->input->post('email')
+        	);
 	}
 }
