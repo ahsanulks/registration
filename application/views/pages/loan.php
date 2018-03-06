@@ -34,7 +34,7 @@
 			}
 		?>
 		<div id="loanform">
-			<form method="post" action="<?=base_url()?>loan/loan_acction" name="loanform" id="loanform">
+			<form method="post" action="<?=base_url()?>loan/loan_action" name="loanform" id="loanform">
 				<h6>Data Identitas Diri</h6>
 				<fieldset class="percent-one-fifth">
 					<label>NIK <span>*</span></label>
@@ -156,7 +156,7 @@
 					<label>Kode Captcha <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<div class="g-recaptcha" data-sitekey="6LeX4UoUAAAAAHvamdobK-bOnp4BxpRtJTnVuM9A"></div>
+					<div class="g-recaptcha" data-sitekey="<?=SITE_KEY?>"></div>
 				</fieldset>
 				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
 				<fieldset class="percent-four-fifth column-last">

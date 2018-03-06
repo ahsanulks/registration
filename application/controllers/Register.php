@@ -8,6 +8,7 @@ class Register extends CI_Controller {
 		parent::__construct();
 		$this->load->model('users');
 		$this->load->library('dates');
+		$this->load->library('sendmail');
 	}
 
 	public function index(){
@@ -38,7 +39,6 @@ class Register extends CI_Controller {
         	$data['tanggal_lahir'] = $this->dates->change_format($data['tanggal_lahir']);
         	$this->users->create($data);
 
-			$this->load->library('sendmail');
         	$this->sendmail->send_to('ahsanulkh996@gmail.com', 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
         	$this->sendmail->send_to($data['email'], 'testing', 'testing bosq', base_url('assets/pdf/'.$this->input->post('nik').'.pdf'));
         	$this->session->set_userdata('notif', true);

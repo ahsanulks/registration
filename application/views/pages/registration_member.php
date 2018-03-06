@@ -88,7 +88,7 @@
 					<label>Kode Captcha <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<div class="g-recaptcha" data-sitekey="6LeX4UoUAAAAAHvamdobK-bOnp4BxpRtJTnVuM9A"></div>
+					<div class="g-recaptcha" data-sitekey="<?=SITE_KEY?>"></div>
 				</fieldset>
 				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
 				<fieldset class="percent-four-fifth column-last">

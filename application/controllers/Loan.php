@@ -16,12 +16,12 @@ class Loan extends CI_Controller {
 		$this->load->view('layouts/footer');
 	}
 
-	public function loan_acction(){
+	public function loan_action(){
 		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET);
 		$resp = $recaptcha->verify($this->input->post('g-recaptcha-response'), $this->input->server('REMOTE_ADDR'));
 		if ($resp->isSuccess() === FALSE) {
 			$this->session->set_userdata('notif', false);
-        	redirect(base_url('registration'));
+        	redirect(base_url('permohonan-pinjaman'));
 		}
 
 		$this->load->library('form_validation');
