@@ -58,7 +58,13 @@
 					<label>Tanggal Lahir <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<input id="tanggal_lahir" name="tanggal_lahir" type="text" required>
+					<input id="tanggal_lahir" name="tanggal_lahir" type="text" required readonly>
+				</fieldset>
+				<fieldset class="percent-one-fifth">
+					<label>Email <span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<input id="email" name="email" type="email" required>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
 					<label>Grade <span>*</span></label>
