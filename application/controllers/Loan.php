@@ -47,9 +47,11 @@ class Loan extends CI_Controller {
 	public function generate_input_validation(){
 		$config = array(
 	        array('field' => 'ktp','label' => 'KTP', 'rules' => 'required'),
+	        array('field' => 'ktp_pasangan','label' => 'KTP Pasangan', 'rules' => 'required'),
 	        array('field' => 'nama', 'label' => 'Nama', 'rules' => 'required'),
 	        array('field' => 'tanggal_lahir', 'label' => 'Tanggal Lahir', 'rules' => 'required'),
 	        array('field' => 'alamat', 'label' => 'Alamat rumah', 'rules' => 'required'),
+	        array('field' => 'alamat_pasangan', 'label' => 'Alamat rumah pasangan', 'rules' => 'required'),
 	        array('field' => 'gender', 'label' => 'Jenis Kelamin', 'rules' => 'required'),
 	        array('field' => 'pasangan', 'label' => 'Nama Pasangan', 'rules' => 'required'),
 	        array('field' => 'unit', 'label' => 'Unit', 'rules' => 'required'),
@@ -122,9 +124,11 @@ class Loan extends CI_Controller {
 	public function get_data(){
 		return $data = array(
 	    		'ktp' => $this->input->get('ktp'),
+	    		'ktp_pasangan' => $this->input->get('ktp_pasangan'),
 	    		'nama' => $this->input->get('nama'),
 	    		'tanggal_lahir' => $this->input->get('tanggal_lahir'),
 	    		'alamat' => $this->input->get('alamat'),
+	    		'alamat_pasangan' => $this->input->get('alamat_pasangan'),
 	    		'gender' => $this->input->get('gender'),
 	    		'unit_kerja' => $this->input->get('unit_kerja'),
 	    		'pasangan' => $this->input->get('pasangan'),
@@ -143,9 +147,11 @@ class Loan extends CI_Controller {
 	public function get_post_data(){
 		return $data = array(
 	        		'ktp' => $this->input->post('ktp'),
+	        		'ktp_pasangan' => $this->input->post('ktp_pasangan'),
 	        		'nama' => strtoupper($this->input->post('nama')),
 	        		'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 	        		'alamat' => $this->input->post('alamat'),
+	        		'alamat_pasangan' => $this->input->post('alamat_pasangan'),
 	        		'gender' => $this->input->post('gender'),
 	        		'pasangan' => $this->input->post('pasangan'),
 	        		'unit_kerja' => $this->input->post('unit_kerja'),

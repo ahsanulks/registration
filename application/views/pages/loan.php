@@ -85,6 +85,18 @@
 				<fieldset class="percent-four-fifth column-last">
 					<input id="pasangan" name="pasangan" type="text" required>
 				</fieldset>
+				<fieldset class="percent-one-fifth">
+					<label>Nomor KTP Pasangan<span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<input id="ktp_pasangan" name="ktp_pasangan" type="text" required>
+				</fieldset>
+				<fieldset class="percent-one-fifth">
+					<label>Alamat Rumah Pasangan<span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<textarea id="alamat_pasangan" name="alamat_pasangan" class="full-width" required></textarea>
+				</fieldset>
 				<h6 class="percent-four-fifth">Data Unit Kerja</h6>
 				<h6 class="percent-one-fifth column-last">&nbsp;</h6>
 				<fieldset class="percent-one-fifth">
