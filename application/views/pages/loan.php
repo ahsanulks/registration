@@ -137,25 +137,22 @@
 					<input type="text" name="pinjaman_deskripsi" id="pinjaman_deskripsi" required placeholder="contoh: seratus juta rupiah">
 				</fieldset>
 				<fieldset class="percent-one-fifth">
-					<label>Jangka Waktu <span>*</span></label>
-				</fieldset>
-				<fieldset class="percent-four-fifth column-last">
-					<select name='waktu' required="">
-						<option value="12">12 Bulan</option>
-						<option value="24">24 Bulan</option>
-						<option value="36">36 Bulan</option>
-					</select>
-				</fieldset>
-				<fieldset class="percent-one-fifth">
 					<label>Jenis Pinjaman <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<select name='jenis_pinjaman' required="">
-						<option value="multi guna">Multi Guna</option>
+					<select name='jenis_pinjaman' id='jenis_pinjaman' required="">
+						<option value="0">Pilih Pinjaman</option>
+						<option value="multiguna">Multiguna</option>
 						<option value="berjangka">Berjangka</option>
-						<option value="toko">Toko</option>
-						<option value="barang">Barang</option>
 						<option value="berjaminan">Berjaminan</option>
+					</select>
+				</fieldset>
+				<fieldset class="percent-one-fifth">
+					<label>Jangka Waktu <span>*</span></label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<select name='waktu' id='waktu' required="">
+						<option value="0">Pilih bulan</option>
 					</select>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
@@ -165,10 +162,16 @@
 					<input id="keperluan" name="keperluan" type="text" required>
 				</fieldset>
 				<fieldset class="percent-one-fifth">
+					<label>Simulasi Cicin/bulan</label>
+				</fieldset>
+				<fieldset class="percent-four-fifth column-last">
+					<input id="angsuran" name="angsuran" type="text" readonly="">
+				</fieldset>
+				<fieldset class="percent-one-fifth">
 					<label>Kode Captcha <span>*</span></label>
 				</fieldset>
 				<fieldset class="percent-four-fifth column-last">
-					<div class="g-recaptcha" data-sitekey="<?=SITE_KEY?>"></div>
+					<!-- <div class="g-recaptcha" data-sitekey="<?=SITE_KEY?>"></div> -->
 				</fieldset>
 				<fieldset class="percent-one-fifth">&nbsp;</fieldset>
 				<fieldset class="percent-four-fifth column-last">
@@ -217,4 +220,44 @@
 			document.getElementById('pinjaman').value = Number(value.split('.').join('')).toLocaleString('id');
 		}
 	}
+
+	function calculate(){
+		$.ajax({
+		  url: '<?=base_url('simulation/calculate_loan')?>?pinjaman='+$("#pinjaman").val()+'&waktu='+$("#waktu").val()+'&jenis_pinjaman='+$("#jenis_pinjaman").val(),
+		  type: 'GET',
+		  success: function(response){
+		  	$("#angsuran").val('Rp ' + response.installment);
+		  },
+		  dataType: 'JSON'
+		});
+	}
+
+	$("#waktu").change(function(){
+		if ($("#waktu").val() != 0) {
+			calculate();
+		}
+	});
+
+	$("#jenis_pinjaman").change(function(){
+		if ($("#jenis_pinjaman").val() != 0) {
+			$.ajax({
+			  url: '<?=base_url('simulation/get_time')?>?jenis_pinjaman='+$("#jenis_pinjaman").val(),
+			  type: 'GET',
+			  success: function(response){
+			  	text = "<option value='0'>Pilih bulan</option>";
+			  	response.forEach(function(item, index){
+			  		text += "<option value=" + item +">" + item + ' bulan</option>';
+			  	});
+			  	$("#waktu").empty();
+			  	$("#waktu").append(text);
+			  },
+			  dataType: 'JSON'
+			});
+		}
+		else{
+			$("#waktu").empty();
+			$("#waktu").append("<option value='0'>Pilih bulan</option>");
+			$("#angsuran").val('');
+		}
+	})
 </script>
