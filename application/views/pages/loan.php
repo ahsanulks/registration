@@ -24,10 +24,10 @@
 		<?php 
 			if (isset($this->session->notif)) {
 				if ($this->session->notif) { ?>
-					<div class="box-success"><strong>Sukses!</strong> Registrasi berhasil</div>
+					<div class="box-success"><strong>Sukses!</strong> Permohonan Pinjaman berhasil</div>
 				<?php
 				} else { ?>
-					<div class="box-error"><strong>Gagal!</strong> Registrasi gagal</div>
+					<div class="box-error"><strong>Gagal!</strong> Permohonan Pinjaman gagal</div>
 				<?php
 				}
 				$this->session->sess_destroy();

@@ -10,8 +10,8 @@ class Sendmail {
 		    'protocol'  => 'smtp',
 		    'smtp_host' => 'ssl://smtp.gmail.com',
 		    'smtp_port' => 465,
-		    'smtp_user' => '',
-		    'smtp_pass' => '',
+		    'smtp_user' => 'ahsanulkh996',
+		    'smtp_pass' => 'sugnncblgivhchro',
 		    'mailtype'  => 'html', 
 		    'charset'   => 'utf-8'
 			);
