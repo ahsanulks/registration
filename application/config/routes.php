@@ -53,4 +53,6 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['registration'] = 'register';
+$route['confirmation-registration'] = 'register/register_confirmation';
 $route['permohonan-pinjaman'] = 'loan';
+$route['konfirmasi-permohonan-pinjaman'] = 'loan/loan_confirmation';

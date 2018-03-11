@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2018 at 04:37 PM
+-- Generation Time: Mar 11, 2018 at 12:45 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `registration`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `confirmation`
+--
+
+CREATE TABLE `confirmation` (
+  `id` int(11) NOT NULL,
+  `nik` text NOT NULL,
+  `nama` text NOT NULL,
+  `unit` text NOT NULL,
+  `unit_kerja` text NOT NULL,
+  `file_path` text NOT NULL,
+  `action` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `confirmation`
+--
+
+INSERT INTO `confirmation` (`id`, `nik`, `nama`, `unit`, `unit_kerja`, `file_path`, `action`, `created_at`) VALUES
+(1, 'P87232', 'Ahsanul Khuluq S', 'Teknologi Informasi', 'Divisi', 'C:/xampp/htdocs/registrasi/uploads/confirmation-1520768488.pdf', 'registration_confirmation', '2018-03-11 11:41:28');
 
 -- --------------------------------------------------------
 
@@ -114,6 +138,12 @@ INSERT INTO `user` (`id`, `nama`, `nik`, `email`, `tempat_lahir`, `tanggal_lahir
 --
 
 --
+-- Indexes for table `confirmation`
+--
+ALTER TABLE `confirmation`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pengajuan_pinjaman`
 --
 ALTER TABLE `pengajuan_pinjaman`
@@ -129,6 +159,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `confirmation`
+--
+ALTER TABLE `confirmation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `pengajuan_pinjaman`
 --
