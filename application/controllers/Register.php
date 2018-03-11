@@ -94,4 +94,56 @@ class Register extends CI_Controller {
         		'email' => $this->input->post('email')
         	);
 	}
+
+	public function register_confirmation(){
+		$this->load->view('layouts/header');
+		$this->load->view('pages/registration_confirmation');
+		$this->load->view('layouts/footer');
+	}
+
+	public function register_confirmation_action(){
+		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET);
+		$resp = $recaptcha->verify($this->input->post('g-recaptcha-response'), $this->input->server('REMOTE_ADDR'));
+		if ($resp->isSuccess() != TRUE) {
+			$this->session->set_userdata('notif', false);
+        	redirect(base_url('confirmation-registration'));
+		}
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules($this->validation_confirmation());
+		if ($this->form_validation->run() === FALSE){
+        	$this->session->set_userdata('notif', false);
+            redirect(base_url('confirmation-registration'));
+        }
+        else{
+			$data = $this->get_post_confirmation();
+			$this->load->library('uploads');
+			$path = $this->uploads->upload_file('file', 'pdf|zip');
+			if ($path === FALSE) {
+				$this->session->set_userdata('notif', false);
+            	redirect(base_url('confirmation-registration'));
+			}
+			$this->load->library('sendmail');
+			$this->sendmail->send_to(ADMIN_EMAIL, 'testing', 'testing bosq', $path);
+        	$this->session->set_userdata('notif', true);
+			redirect(base_url('confirmation-registration'));
+		}
+	}
+
+	public function get_post_confirmation(){
+		return $data = array(
+			'nik' => $this->input->post('nik'),
+			'nama' => $this->input->post('nama'),
+			'unit_kerja' => $this->input->post('unit_kerja'),
+	        'unit' => $this->input->post('unit')
+		);
+	}
+
+	public function validation_confirmation(){
+		$config = array(
+	        array('field' => 'nama', 'label' => 'Nama', 'rules' => 'required'),
+	        array('field' => 'unit', 'label' => 'Unit', 'rules' => 'required'),
+			array('field' => 'nik','label' => 'NIK', 'rules' => 'required')
+		);
+		return $config;
+	}
 }
