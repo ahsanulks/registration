@@ -7,6 +7,7 @@ class Register extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('users');
+		$this->load->model('confirmations');
 		$this->load->library('dates');
 		$this->load->library('sendmail');
 	}
@@ -122,6 +123,11 @@ class Register extends CI_Controller {
 				$this->session->set_userdata('notif', false);
             	redirect(base_url('confirmation-registration'));
 			}
+
+			$data['file_path'] = $path;
+			$data['action'] = 'registration_confirmation';
+			$this->confirmations->create($data);
+			
 			$this->load->library('sendmail');
 			$this->sendmail->send_to(ADMIN_EMAIL, 'testing', 'testing bosq', $path);
         	$this->session->set_userdata('notif', true);

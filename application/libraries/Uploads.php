@@ -5,7 +5,7 @@ class Uploads {
 
     public function upload_file($file, $allowed_type){
     	$config['upload_path']          = './uploads/';
-    	$config['file_name']			= 'confirmation-'.time().end(explode('.', $_FILES['file']['name']));
+    	$config['file_name']			= 'confirmation-'.time();
         $config['allowed_types']        = $allowed_type;
         $config['max_size']             = 2000;
         $CI =& get_instance();

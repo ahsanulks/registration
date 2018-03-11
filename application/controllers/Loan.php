@@ -195,6 +195,11 @@ class Loan extends CI_Controller {
 				$this->session->set_userdata('notif', false);
             	redirect(base_url('konfirmasi-permohonan-pinjaman'));
 			}
+
+			$data['file_path'] = $path;
+			$data['action'] = 'loan_confirmation';
+			$this->confirmations->create($data);
+
 			$this->load->library('sendmail');
 			$this->sendmail->send_to(ADMIN_EMAIL, 'testing', 'testing bosq', $path);
         	$this->session->set_userdata('notif', true);
