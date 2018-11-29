@@ -84,7 +84,7 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
-define('SAVE_PDF', 'C:\xampp\htdocs\registrasi/assets/pdf/');
-define('SECRET', '6Lfo7EoUAAAAAOVEBCB5YUs_S-BIqiJt4m7nOuwd');
-define('SITE_KEY', '6Lfo7EoUAAAAAId7grrzXvGYVcDuly8CQdhlpqpU');
-define('ADMIN_EMAIL', 'ahsanulkh996@gmail.com');
+define('SAVE_PDF', '');
+define('SECRET', '');
+define('SITE_KEY', '');
+define('ADMIN_EMAIL', '');
