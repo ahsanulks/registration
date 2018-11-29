@@ -18,7 +18,7 @@ class Sendmail {
 			$CI->load->library('email', $config);
 			$CI->email->set_newline("\r\n");
 
-	    $CI->email->from('ahsanulkh996@gmail.com', 'hello');
+	    $CI->email->from('', 'hello');
 	    $CI->email->to($email); 
 
 	    $CI->email->subject($subject);
